@@ -23,7 +23,7 @@ import HapiStaticFiles from 'hapi-static-files';
 server.register({
   register: HapiStaticFiles,
   options: {
-    path: STATICS_PATH
+    path: 'public' // Absolute path or relative to the root folder of the project.
   }
 }, err => {});
 ```
