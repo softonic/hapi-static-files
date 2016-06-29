@@ -28,7 +28,6 @@ const HapiStaticFiles = {
         }
       },
       config: {
-        id: 'statics',
         description: 'Static files of the application',
         cors: true,
         cache: {

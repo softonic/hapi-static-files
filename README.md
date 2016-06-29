@@ -1,6 +1,6 @@
 # hapi-static-files
 
-Hapi plugin to serve static files with a predefined configuration.
+Hapi plugin to serve static files with CORS enabled and maximum cache time.
 
 Active maintainer: [ruben.norte@softonic.com](mailto:ruben.norte@softonic.com?subject=hapi-static-files)
 
@@ -18,7 +18,6 @@ npm install hapi-static-files
 
 // ES6
 import HapiStaticFiles from 'hapi-static-files';
-import ms from 'ms';
 
 // Registration
 server.register({
