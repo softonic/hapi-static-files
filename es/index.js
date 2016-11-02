@@ -32,11 +32,6 @@ const HapiStaticFiles = {
         cors: true,
         cache: {
           expiresIn: ms('1y')
-        },
-        plugins: {
-          'hapi-newrelic': {
-            transactionName: 'static_file'
-          }
         }
       }
     });
