@@ -2,8 +2,6 @@
 
 Hapi plugin to serve static files with CORS enabled and maximum cache time.
 
-Active maintainer: [ruben.norte@softonic.com](mailto:ruben.norte@softonic.com?subject=hapi-static-files)
-
 ## Installation
 
 ```bash
