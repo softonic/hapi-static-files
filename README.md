@@ -38,7 +38,7 @@ npm test
 
 ## Contribute
 
-1. Fork it: `git clone ssh://git@stash.redtonic:7999/NODE/hapi-static-files.git`
+1. Fork it: `git clone https://github.com/softonic/hapi-static-files.git`
 2. Create your feature branch: `git checkout -b feature/my-new-feature`
 3. Commit your changes: `git commit -am 'Added some feature'`
 4. Check the build: `npm run build`

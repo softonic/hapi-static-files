@@ -8,10 +8,10 @@
   "description": "Hapi plugin to serve static files with a predefined configuration",
   "license": "Apache-2.0",
   "main": "index.js",
-  "homepage": "https://stash.redtonic/projects/NODE/repos/hapi-static-files",
+  "homepage": "https://github.com/softonic/hapi-static-files",
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.redtonic:7999/projects/NODE/repos/hapi-static-files.git"
+    "url": "git+https://github.com/softonic/hapi-static-files.git"
   },
   "files": [
     "es",
