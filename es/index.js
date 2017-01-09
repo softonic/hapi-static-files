@@ -29,7 +29,21 @@ const HapiStaticFiles = {
       },
       config: {
         description: 'Static files of the application',
-        cors: true,
+        ext: {
+          onPostHandler: {
+            method(request, reply) {
+              // We check this as some error response do not have a `header` method
+              // We can remove this once error management is improved in the application
+              if (request.response && typeof request.response.header === 'function') {
+                request.response.header('Access-Control-Allow-Origin', '*');
+                request.response.header('Access-Control-Allow-Headers',
+                  'Origin, X-Requested-With, Accept, Content-Type, If-None-Match');
+                request.response.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+              }
+              reply.continue();
+            }
+          }
+        },
         cache: {
           expiresIn: ms('1y')
         },
