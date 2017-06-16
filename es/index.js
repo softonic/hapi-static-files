@@ -46,7 +46,7 @@ const HapiStaticFiles = {
           }
         },
         cache: {
-          expiresIn: 1000*60*60*24*21
+          expiresIn: 31557600000
         },
         tags: ['static']
       }
