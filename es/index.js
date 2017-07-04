@@ -1,4 +1,3 @@
-import ms from 'ms';
 import packageJSON from '../package.json';
 
 /**
@@ -47,7 +46,7 @@ const HapiStaticFiles = {
           }
         },
         cache: {
-          expiresIn: ms('1y')
+          expiresIn: 31557600000
         },
         tags: ['static']
       }
