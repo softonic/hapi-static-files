@@ -18,12 +18,12 @@ npm install hapi-static-files
 import HapiStaticFiles from 'hapi-static-files';
 
 // Registration
-server.register({
-  register: HapiStaticFiles,
+await server.register({
+  plugin: HapiStaticFiles,
   options: {
     path: 'public' // Absolute path or relative to the root folder of the project.
   }
-}, err => {});
+});
 ```
 
 ## Testing
