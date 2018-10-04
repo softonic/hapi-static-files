@@ -4,15 +4,16 @@ import packageJSON from '../package.json';
  * Hapi plugin to serve static files with a predefined configuration
  * @type {Object}
  */
-const HapiStaticFiles = {
-
+export default {
+  pkg: packageJSON,
+  dependencies: ['inert'],
   /**
    * @param  {hapi.Server}  server
    * @param  {Object}       options
    * @param  {string}       options.path
    * @param  {Function}     next
    */
-  register(server, options, next) {
+  register(server, options) {
     const { path } = options;
 
     /**
@@ -23,14 +24,14 @@ const HapiStaticFiles = {
       path: '/{param*}', // /styles/main.css
       handler: {
         directory: {
-          path
-        }
+          path,
+        },
       },
       config: {
         description: 'Static files of the application',
         ext: {
           onPostHandler: {
-            method(request, reply) {
+            method(request, h) {
               // Check this as some error response do not have a `header` method
               // We can remove this once error management is improved in the application
               if (request.response && typeof request.response.header === 'function') {
@@ -41,25 +42,15 @@ const HapiStaticFiles = {
                   'Origin, X-Requested-With, Accept, Content-Type, If-None-Match');
                 request.response.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
               }
-              reply.continue();
-            }
-          }
+              return h.continue;
+            },
+          },
         },
         cache: {
-          expiresIn: 31557600000
+          expiresIn: 31557600000,
         },
-        tags: ['static']
-      }
+        tags: ['static'],
+      },
     });
-
-    next();
-  }
-
+  },
 };
-
-HapiStaticFiles.register.attributes = {
-  pkg: packageJSON,
-  dependencies: ['inert']
-};
-
-export default HapiStaticFiles;
