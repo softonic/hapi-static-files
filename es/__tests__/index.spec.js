@@ -1,5 +1,5 @@
-import hapi from 'hapi';
-import Inert from 'inert';
+import hapi from '@hapi/hapi';
+import Inert from '@hapi/inert';
 import HapiStaticFiles from '../index';
 
 async function createServerWithPlugin(options = {}) {
@@ -21,7 +21,7 @@ async function createServerWithPlugin(options = {}) {
 describe('HapiStaticFiles', () => {
   it('should be a Hapi plugin', () => {
     expect(HapiStaticFiles.register).toBeInstanceOf(Function);
-    expect(HapiStaticFiles.pkg.name).toBe('hapi-static-files');
+    expect(HapiStaticFiles.pkg.name).toBe('@softonic/hapi-static-files');
   });
 
   describe('when it is registered', () => {
@@ -33,7 +33,8 @@ describe('HapiStaticFiles', () => {
       const response = await server.inject('/test.css');
 
       expect(response.headers['access-control-allow-origin']).toBe('*');
-      expect(response.headers['access-control-allow-headers']).toBe('Origin, X-Requested-With, Accept, Content-Type, If-None-Match');
+      expect(response.headers['access-control-allow-headers'])
+        .toBe('Origin, X-Requested-With, Accept, Content-Type, If-None-Match');
       expect(response.headers['access-control-allow-methods']).toBe('GET, OPTIONS');
     });
   });

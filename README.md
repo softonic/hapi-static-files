@@ -5,17 +5,17 @@ Hapi plugin to serve static files with CORS enabled and maximum cache time.
 ## Installation
 
 ```bash
-npm install hapi-static-files
+npm install @softonic/hapi-static-files
 ```
 
 ## Usage
 
 ```javascript
 // CommonJS
-// const HapiStaticFiles = require('hapi-static-files');
+// const HapiStaticFiles = require('@softonic/hapi-static-files');
 
 // ES6
-import HapiStaticFiles from 'hapi-static-files';
+import HapiStaticFiles from '@softonic/hapi-static-files';
 
 // Registration
 await server.register({
