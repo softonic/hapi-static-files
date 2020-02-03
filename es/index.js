@@ -6,7 +6,8 @@ import packageJSON from '../package.json';
  */
 export default {
   pkg: packageJSON,
-  dependencies: ['inert'],
+
+  dependencies: ['@hapi/inert'],
   /**
    * @param  {hapi.Server}  server
    * @param  {Object}       options
