@@ -34,7 +34,7 @@
     "node": ">=12.14.1"
   },
   "peerDependencies": {
-    "hapi": "19.x.x"
+    "@hapi/hapi": "19.x.x"
   },
   "dependencies": {
     "@hapi/inert": "^6.0.1"
